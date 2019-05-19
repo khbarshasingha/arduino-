@@ -1,0 +1,27 @@
+int pin=13; // setting the output pin
+// setup function is the manadate function that runs only once 
+void setup() {
+  
+  pinMode(pin,OUTPUT); // pinmode function that takes two argument - the pin, the mode(input, output , or input_pullup)
+
+}
+// the loop function runs repeatedly until the arduino is disconnected from power supply
+void loop() {
+  //for blinking 5 times quickly
+  int i;
+  for(i=0;i<5;i++)
+  {
+    digitalWrite(pin, HIGH); // write to the ouptut , in this case led-two arguments(pin, (high=on/low=off)) 
+    delay(200); // led on for 0.5 sec ,
+    digitalWrite(pin,LOW);
+    delay(200); //led off for 0.5 sec
+  }
+  //blink 5 times slowly
+  for(i=0;i<5;i++)
+  {
+    digitalWrite(pin, HIGH);
+    delay(1500); // led on for 1.5 sec
+    digitalWrite(pin,LOW);
+    delay(1500); //led off for 1.5 sec
+  }
+}
